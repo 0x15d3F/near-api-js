@@ -33,7 +33,6 @@
         "danger": "^10.6.6",
         "danger-plugin-yarn": "^1.3.2",
         "eslint": "^6.5.1",
-        "husky": "^7.0.4",
         "in-publish": "^2.0.0",
         "jest": "^26.0.1",
         "localstorage-memory": "^1.0.3",
@@ -62,8 +61,7 @@
         "lint": "eslint test && eslint src/**/*.ts",
         "fix": "eslint test --fix && eslint src/**/*.ts --fix",
         "prefuzz": "yarn build",
-        "fuzz": "jsfuzz test/fuzz/borsh-roundtrip.js test/fuzz/corpus/",
-        "prepare": "husky install"
+        "fuzz": "jsfuzz test/fuzz/borsh-roundtrip.js test/fuzz/corpus/"
     },
     "bundlewatch": {
         "files": [
