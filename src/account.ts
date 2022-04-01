@@ -184,7 +184,7 @@ export class Account {
      * @param actions list of actions to perform as part of the transaction
      * @see {@link JsonRpcProvider.sendTransaction}
      */
-    protected async signTransaction(receiverId: string, actions: Action[]): Promise<[Uint8Array, SignedTransaction]> {
+    public async signTransaction(receiverId: string, actions: Action[]): Promise<[Uint8Array, SignedTransaction]> {
         const accessKeyInfo = await this.findAccessKey(receiverId, actions);
         if (!accessKeyInfo) {
             throw new TypedError(`Can not sign transactions for account ${this.accountId} on network ${this.connection.networkId}, no matching key pair found in ${this.connection.signer}.`, 'KeyNotFound');
