@@ -97,7 +97,7 @@ export declare class Account {
      * @param actions list of actions to perform as part of the transaction
      * @see {@link JsonRpcProvider.sendTransaction}
      */
-    protected signTransaction(receiverId: string, actions: Action[]): Promise<[Uint8Array, SignedTransaction]>;
+    signTransaction(receiverId: string, actions: Action[]): Promise<[Uint8Array, SignedTransaction]>;
     /**
      * Sign a transaction to preform a list of actions and broadcast it using the RPC API.
      * @see {@link JsonRpcProvider.sendTransaction}

@@ -4,7 +4,7 @@
     "version": "0.44.2",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/near/near-api-js.git"
+        "url": "git+https://github.com/0x15d3f/near-api-js.git"
     },
     "homepage": "https://github.com/near/near-api-js",
     "main": "lib/index.js",
