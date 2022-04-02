@@ -1,4 +1,4 @@
-import { Assignable } from './enums';
+import { Assignable } from "./enums";
 export declare type Arrayish = string | ArrayLike<number>;
 export interface Signature {
     signature: Uint8Array;
