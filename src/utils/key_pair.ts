@@ -1,6 +1,7 @@
 import nacl from "tweetnacl";
 import { base_encode, base_decode } from "./serialize";
 import { Assignable } from "./enums";
+import { decode } from "bs58";
 
 export type Arrayish = string | ArrayLike<number>;
 
@@ -84,6 +85,7 @@ export abstract class KeyPair {
     abstract verify(message: Uint8Array, signature: Uint8Array): boolean;
     abstract toString(): string;
     abstract getPublicKey(): PublicKey;
+    abstract getAccountId(): string;
 
     /**
      * @param curve Name of elliptical curve, case-insensitive
@@ -174,6 +176,12 @@ export class KeyPairEd25519 extends KeyPair {
 
     getPublicKey(): PublicKey {
         return this.publicKey;
+    }
+
+    getAccountId(): string {
+        const cleanedPubKey = this.publicKey.toString().replace("ed25519", "");
+
+        return (decode(cleanedPubKey) as Buffer).toString("hex"); // Buffer.from() or assert Buffer type? Unsure of best practice
     }
 
 }

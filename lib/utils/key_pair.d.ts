@@ -24,6 +24,7 @@ export declare abstract class KeyPair {
     abstract verify(message: Uint8Array, signature: Uint8Array): boolean;
     abstract toString(): string;
     abstract getPublicKey(): PublicKey;
+    abstract getAccountId(): string;
     /**
      * @param curve Name of elliptical curve, case-insensitive
      * @returns Random KeyPair based on the curve
@@ -59,4 +60,5 @@ export declare class KeyPairEd25519 extends KeyPair {
     verify(message: Uint8Array, signature: Uint8Array): boolean;
     toString(): string;
     getPublicKey(): PublicKey;
+    getAccountId(): string;
 }
