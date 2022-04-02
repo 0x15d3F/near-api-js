@@ -181,7 +181,7 @@ export class KeyPairEd25519 extends KeyPair {
     getAccountId(): string {
         const cleanedPubKey = this.publicKey.toString().replace("ed25519:", "");
 
-        return (decode(cleanedPubKey) as Buffer).toString("hex"); // Buffer.from() or assert Buffer type? Unsure of best practice
+        return Buffer.from(decode(cleanedPubKey)).toString("hex"); // Buffer.from() or assert Buffer type? Unsure of best practice
     }
 
 }
